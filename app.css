@@ -19,7 +19,7 @@ h4{
 }
 
 h1{
-    font-size: 5.4rem;
+    font-size: 6.6rem;
     color:#0f768d;
     margin-bottom: 5rem;
 }
@@ -48,7 +48,7 @@ h3{
 }
 
 .bg{
-    opacity: 0.5;
+    opacity: 0.4;
     position: absolute;
     left: 0rem;
     top: 0rem;
@@ -70,6 +70,7 @@ h3{
     align-items: center;
     max-width: 80rem;
     margin: 0 auto;
+    padding: 1rem 1rem 1rem 1rem;
 }
 
 .container>*{
