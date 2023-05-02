@@ -29,6 +29,17 @@ h1>span{
     font-weight: 500;
 }
 
+h3{
+    font-size: 4rem;
+    color:#08586a;
+    margin-bottom: 3rem;
+}
+
+h3>span{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
 h2{
     font-size: 4.2rem;
     margin-bottom: 4rem;
