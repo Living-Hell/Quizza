@@ -12,32 +12,21 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-let questions = [
-    {
-        question: "Which is the brightest star in the sky?",
-        choice1: "Betelgeuse",
-        choice2: "Sirius",
-        choice3: "Sun",
-        choice4: "Polestar",
-        answer: 2
-    },
-    {
-        question: "What is the name of our galaxy?",
-        choice1: "Milky Way",
-        choice2: "Solar System",
-        choice3: "Andromeda",
-        choice4: "Jupiter",
-        answer: 1
-    },
-    {
-        question: "What is the age of our Universe?",
-        choice1: "4.2 billion years",
-        choice2: "4.2 million years",
-        choice3: "13.6 billion years",
-        choice4: "13.6 million years",
-        answer: 3
-    }
-]
+let questions = [];
+
+fetch("questions.json")
+    .then(res => {
+        // console.log(res);
+        return res.json();
+    })
+    .then(loadedQuestions => {
+        // console.log(loadedQuestions);
+        questions = loadedQuestions
+        startGame();
+    })
+    .catch(err => {
+        console.error(err);
+    })
 
 // console.log(questions);
 
@@ -115,6 +104,3 @@ incrementScore = num => {
     score += num;
     scoreText.innerText = score;
 }
-
-
-startGame();
