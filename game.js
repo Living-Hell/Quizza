@@ -3,6 +3,8 @@ const choices = Array.from(document.getElementsByClassName("choice-text"));
 const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
+const loader = document.getElementById('loader');
+const game = document.getElementById('game');
 
 // console.log(choices);
 
@@ -29,6 +31,7 @@ let questions = [];
 //         console.error(err);
 //     })
 
+
 /* Fetching Questions from API(Open Trivia DB) */
 fetch("https://opentdb.com/api.php?amount=10&category=17&difficulty=medium&type=multiple")
     .then(res => {
@@ -36,7 +39,7 @@ fetch("https://opentdb.com/api.php?amount=10&category=17&difficulty=medium&type=
         return res.json();
     })
     .then(loadedQuestions => {
-        console.log(loadedQuestions.results);
+        // console.log(loadedQuestions.results);
         questions = loadedQuestions.results.map(loadedQuestion =>{
             const formattedQuestion = {
                 question : loadedQuestion.question
@@ -74,6 +77,8 @@ startGame = () => {
     availableQuestions = [...questions];
     // console.log(availableQuestions);
     getNewQuestion();
+    game.classList.remove("hidden");
+    loader.classList.add("hidden");
 };
 
 getNewQuestion = () => {
