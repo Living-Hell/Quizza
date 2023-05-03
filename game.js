@@ -6,6 +6,7 @@ const progressBarFull = document.getElementById('progressBarFull');
 const loader = document.getElementById('loader');
 const game = document.getElementById('game');
 const selectedCategory = localStorage.getItem('selectedCategory');
+const selectedDifficulty = localStorage.getItem('selectedDifficulty');
 // console.log(selectedCategory);
 
 let currentQuestion = {};
@@ -31,31 +32,33 @@ let questions = [];
 //         console.error(err);
 //     })
 
+const fetch_URL = `https://opentdb.com/api.php?amount=10&category=${selectedCategory}&difficulty=${selectedDifficulty}&type=multiple`;
+// console.log(fetch_URL);
 
 /*Categories*/
-const categories = [
-    "https://opentdb.com/api.php?amount=10&category=17&difficulty=medium&type=multiple", //Science & Nature
-    "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple", //Computer
-    "https://opentdb.com/api.php?amount=10&category=30&difficulty=medium&type=multiple", //Gadgets
-    "https://opentdb.com/api.php?amount=10&category=19&difficulty=medium&type=multiple", //Mathematics
-    "https://opentdb.com/api.php?amount=10&category=20&difficulty=medium&type=multiple", //Mythology
-    "https://opentdb.com/api.php?amount=10&category=23&difficulty=medium&type=multiple", //History
-    "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple", //Film
-    "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple", //Video Games
-    "https://opentdb.com/api.php?amount=10&category=24&difficulty=medium&type=multiple", //Politics
-    "https://opentdb.com/api.php?amount=10&category=12&difficulty=medium&type=multiple", //Music
-    "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple", //Sports
-    "https://opentdb.com/api.php?amount=10&category=29&difficulty=medium&type=multiple", //Comics
-    "https://opentdb.com/api.php?amount=10&category=26&difficulty=medium&type=multiple", //Celebrities
-    "https://opentdb.com/api.php?amount=10&category=28&difficulty=medium&type=multiple", //Animals
-    "https://opentdb.com/api.php?amount=10&category=31&difficulty=medium&type=multiple", //Anime&Manga
-]
+// const categories = [
+//     "https://opentdb.com/api.php?amount=10&category=17&difficulty=medium&type=multiple", //Science & Nature
+//     "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple", //Computer
+//     "https://opentdb.com/api.php?amount=10&category=30&difficulty=medium&type=multiple", //Gadgets
+//     "https://opentdb.com/api.php?amount=10&category=19&difficulty=medium&type=multiple", //Mathematics
+//     "https://opentdb.com/api.php?amount=10&category=20&difficulty=medium&type=multiple", //Mythology
+//     "https://opentdb.com/api.php?amount=10&category=23&difficulty=medium&type=multiple", //History
+//     "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple", //Film
+//     "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple", //Video Games
+//     "https://opentdb.com/api.php?amount=10&category=24&difficulty=medium&type=multiple", //Politics
+//     "https://opentdb.com/api.php?amount=10&category=12&difficulty=medium&type=multiple", //Music
+//     "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple", //Sports
+//     "https://opentdb.com/api.php?amount=10&category=29&difficulty=medium&type=multiple", //Comics
+//     "https://opentdb.com/api.php?amount=10&category=26&difficulty=medium&type=multiple", //Celebrities
+//     "https://opentdb.com/api.php?amount=10&category=28&difficulty=medium&type=multiple", //Animals
+//     "https://opentdb.com/api.php?amount=10&category=31&difficulty=medium&type=multiple", //Anime&Manga
+// ]
 
-const fetch_url = categories[selectedCategory-1];
+// const fetch_url = categories[selectedCategory-1];
 // console.log(categories[selectedCategory]);
 
 /* Fetching Questions from API(Open Trivia DB) */
-fetch(fetch_url)
+fetch(fetch_URL)
     .then(res => {
         // console.log(res);
         return res.json();

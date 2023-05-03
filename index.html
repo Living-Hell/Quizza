@@ -17,8 +17,8 @@
         <div id="home" class="flex-center flex-column">
             <h1>Quizza!</h1>
             <h4>Knowledge becomes power only when we put it into some use!<br> So, let's honour our knowledge by answering some simple questions.</h4>
-            <h3>Choose a category:</h3>
-            <select name="category" id="category" onchange="selectedCategory()">
+            <h5>Choose a category:</h5>
+            <!-- <select name="category" id="category" onchange="selectedCategory()">
                 <option value="" selected="true" disabled="true">Categories...</option>
                 <option value="1">Science & Nature</option>
                 <option value="2">Science: Computer</option>
@@ -35,20 +35,54 @@
                 <option value="13">Celebrities</option>                
                 <option value="14">Animals</option>
                 <option value="15">Anime & Manga</option>
+            </select> -->
+            <select name="category" id="category" onchange="selectedCategory()">
+                <option value="" selected="true" disabled="true">Categories...</option>
+                <option value="9">General Knowledge</option>
+                <option value="10">Books</option>
+                <option value="11">Film</option>
+                <option value="12">Music</option>
+                <option value="13">Musicals &amp; Theatres</option>
+                <option value="14">Television</option>
+                <option value="15">Video Games</option>
+                <option value="16">Board Games</option>
+                <option value="17">Science &amp; Nature</option>
+                <option value="18">Computers</option>
+                <option value="19">Mathematics</option>
+                <option value="20">Mythology</option>
+                <option value="21">Sports</option>
+                <option value="22">Geography</option>
+                <option value="23">History</option>
+                <option value="24">Politics</option>
+                <option value="25">Art</option>
+                <option value="26">Celebrities</option>
+                <option value="27">Animals</option>
+                <option value="28">Vehicles</option>
+                <option value="29">Comics</option>
+                <option value="30">Gadgets</option>
+                <option value="31">Japanese Anime &amp; Manga</option>
+                <option value="32">Cartoon &amp; Animations</option>		
             </select>
-            <script>
+            <h5>Choose a difficulty level:</h5>
+            <select name="difficulty" id="difficulty" onchange="selectedDifficulty()">
+                <option value="" selected="true" disabled="true">Difficulty...</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <!-- <script>
                 function selectedCategory(){
                     const categ = category[category.selectedIndex].value;
                     localStorage.setItem('selectedCategory',categ);
                     // console.log(categ);
                 }                
-            </script>
+            </script> -->
             <a class="btn" href="/game.html">Play</a>
             <a class="btn" href="/highscores.html">High Scores</a> 
             <!-- <a class="btn" href="/login.html">Login</a>
             <a class="btn" href="/signup.html">Signup</a> -->
         </div>
     </div>
-    <!-- <script src="index.js"></script> -->
+    <script src="index.js"></script>
 </body>
 </html>

@@ -58,6 +58,18 @@ h4>span{
     font-weight: 300;
 }
 
+h5{
+    font-size: 2rem;
+    font-weight: 500;
+    color:#186171;
+    margin-bottom: 1rem;
+}
+
+h5>span{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
 /* Background Image*/
 
 .wrap{

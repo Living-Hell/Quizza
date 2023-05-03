@@ -3,6 +3,7 @@ const saveScoreBtn = document.getElementById('saveScoreBtn');
 const finalScore = document.getElementById('finalScore');
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 const selectedCategory = localStorage.getItem('selectedCategory');
+const selectedDifficulty = localStorage.getItem('selectedDifficulty');
 
 const categories = [
     "Science & Nature","Computer","Gadgets","Mathematics","Mythology","History","Film","Video Games","Politics","Music",
@@ -29,7 +30,8 @@ saveHighScore = e =>{
     const score = {
         score : mostRecentScore,
         name : username.value,
-        category: categories[selectedCategory-1]
+        category: categories[selectedCategory-1],
+        difficulty: selectedDifficulty
     };
 
     highScores.push(score);
