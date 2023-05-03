@@ -2,6 +2,12 @@ const username = document.getElementById('username');
 const saveScoreBtn = document.getElementById('saveScoreBtn');
 const finalScore = document.getElementById('finalScore');
 const mostRecentScore = localStorage.getItem('mostRecentScore');
+const selectedCategory = localStorage.getItem('selectedCategory');
+
+const categories = [
+    "Science & Nature","Computer","Gadgets","Mathematics","Mythology","History","Film","Video Games","Politics","Music",
+    "Sports","Comics","Celebrities","Animals","Anime&Manga",
+]
 
 // localStorage.setItem('highScores',JSON.stringify([]));
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
@@ -22,7 +28,8 @@ saveHighScore = e =>{
 
     const score = {
         score : mostRecentScore,
-        name : username.value
+        name : username.value,
+        category: categories[selectedCategory-1]
     };
 
     highScores.push(score);
