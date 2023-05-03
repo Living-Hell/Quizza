@@ -46,9 +46,16 @@ h2{
     font-weight: 700;
 }
 
-h3{
-    font-size: 2.8rem;
+h4{
+    font-size: 2.45rem;
     font-weight: 500;
+    color:#08586a;
+    margin-bottom: 3rem;
+}
+
+h4>span{
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 /* Background Image*/
@@ -145,6 +152,27 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+select{
+    padding: 1.4rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid #4695d2;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: #2090b2;
+    background-color: #fdfdfd;
+    border-radius: 1rem;
+}
+
+select:focus{
+    outline:none;   
+}
+
+select>*{
+    font-size: 1.5rem;
+    padding-right: 10rem;
 }
 
 input{
