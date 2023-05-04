@@ -94,6 +94,27 @@ fetch(fetch_URL)
         console.error(err);
     });
 
+    var timeleft;
+    if(selectedDifficulty === "easy"){
+        timeleft = 30;
+    }else if(selectedDifficulty === "medium"){
+        timeleft = 40;
+    }else{
+        timeleft = 60;
+    }
+    
+    var downloadTimer = setInterval(function(){
+    if(timeleft <= 0){
+        clearInterval(downloadTimer);
+        document.getElementById("countdown").innerHTML = "Finished";
+        localStorage.setItem('mostRecentScore',score);
+        return window.location.assign("/end.html");
+    } else {
+        document.getElementById("countdown").innerHTML = timeleft;
+    }
+    timeleft -= 1;
+    }, 1000);
+
 
 // console.log(questions);
 

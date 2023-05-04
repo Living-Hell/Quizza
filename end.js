@@ -23,6 +23,7 @@ if(questionsAvailable === "false"){
     noQues.innerText = "No question available for this category and difficulty level."
     // console.log('questionsAvailable');
 }else{
+    noQues.innerText = "Congratulations!"
     finalScore.innerText = mostRecentScore;
     // console.log('questionsAvailable');    
 }
@@ -39,7 +40,7 @@ saveHighScore = e =>{
     const score = {
         score : mostRecentScore,
         name : username.value,
-        category: categories[selectedCategory-1],
+        category: categories[selectedCategory-9],
         difficulty: selectedDifficulty
     };
 
