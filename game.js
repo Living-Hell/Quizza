@@ -7,6 +7,7 @@ const loader = document.getElementById('loader');
 const game = document.getElementById('game');
 const selectedCategory = localStorage.getItem('selectedCategory');
 const selectedDifficulty = localStorage.getItem('selectedDifficulty');
+const finalScore = document.getElementById('finalScore');
 // console.log(selectedCategory);
 
 let currentQuestion = {};
@@ -64,7 +65,11 @@ fetch(fetch_URL)
         return res.json();
     })
     .then(loadedQuestions => {
-        // console.log(loadedQuestions.results);
+        if(!loadedQuestions.results.length){
+            localStorage.setItem('questionsAvailable',false);
+        }else{
+            localStorage.setItem('questionsAvailable',true);
+        }
         questions = loadedQuestions.results.map(loadedQuestion =>{
             const formattedQuestion = {
                 question : loadedQuestion.question

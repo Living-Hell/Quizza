@@ -4,6 +4,8 @@ const finalScore = document.getElementById('finalScore');
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 const selectedCategory = localStorage.getItem('selectedCategory');
 const selectedDifficulty = localStorage.getItem('selectedDifficulty');
+questionsAvailable = localStorage.getItem('questionsAvailable');
+const noQues = document.getElementById('noQues');
 
 const categories = [
     "Science & Nature","Computer","Gadgets","Mathematics","Mythology","History","Film","Video Games","Politics","Music",
@@ -16,7 +18,14 @@ const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 const MAX_HIGH_SCORES = 5;
 
-finalScore.innerText = mostRecentScore;
+if(questionsAvailable === "false"){
+    finalScore.innerText = "OOPS!";
+    noQues.innerText = "No question available for this category and difficulty level."
+    // console.log('questionsAvailable');
+}else{
+    finalScore.innerText = mostRecentScore;
+    // console.log('questionsAvailable');    
+}
 
 username.addEventListener("keyup", () => {
     // console.log(username.value);
