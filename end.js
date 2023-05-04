@@ -8,8 +8,9 @@ questionsAvailable = localStorage.getItem('questionsAvailable');
 const noQues = document.getElementById('noQues');
 
 const categories = [
-    "Science & Nature","Computer","Gadgets","Mathematics","Mythology","History","Film","Video Games","Politics","Music",
-    "Sports","Comics","Celebrities","Animals","Anime&Manga",
+    "General Knowledge","Books","Film","Music","Musicals &amp; Theatres","Television","Video Games","Board Games",
+    "Science &amp; Nature","Computers","Mathematics","Mythology","Sports","Geography","History","Politics","Art",
+    "Celebrities","Animals","Vehicles","Comics","Gadgets","Japanese Anime &amp; Manga","Entertainment: Cartoon &amp; Animations"
 ]
 
 // localStorage.setItem('highScores',JSON.stringify([]));
